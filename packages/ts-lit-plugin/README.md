@@ -1,16 +1,16 @@
-<h1 align="center">ts-lit-plugin</h1>
+<h1 align="center">ts-wapitis-plugin</h1>
 <p align="center">
-  <b>Typescript plugin that adds type checking and code completion to lit-html</b></br>
+  <b>Typescript plugin that adds type checking and code completion to lit-html in a wapitis element</b></br>
   <sub><sub>
 </p>
 
 <br />
 
 <p align="center">
-		<a href="https://npmcharts.com/compare/ts-lit-plugin?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/ts-lit-plugin.svg" height="20"/></a>
-<a href="https://www.npmjs.com/package/ts-lit-plugin"><img alt="NPM Version" src="https://img.shields.io/npm/v/ts-lit-plugin.svg" height="20"/></a>
-<a href="https://david-dm.org/runem/lit-analyzer"><img alt="Dependencies" src="https://img.shields.io/david/runem/lit-analyzer.svg" height="20"/></a>
-<a href="https://github.com/runem/lit-analyzer/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/runem/lit-analyzer.svg" height="20"/></a>
+		<a href="https://npmcharts.com/compare/ts-wapitis-plugin?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/ts-wapitis-plugin.svg" height="20"/></a>
+<a href="https://www.npmjs.com/package/ts-wapitis-plugin"><img alt="NPM Version" src="https://img.shields.io/npm/v/ts-wapitis-plugin.svg" height="20"/></a>
+<a href="https://david-dm.org/NicolasBoyer/lit-analyzer"><img alt="Dependencies" src="https://img.shields.io/david/NicolasBoyer/lit-analyzer.svg" height="20"/></a>
+<a href="https://github.com/NicolasBoyer/lit-analyzer/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/NicolasBoyer/lit-analyzer.svg" height="20"/></a>
 	</p>
 
 
@@ -19,14 +19,25 @@
 </p>
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#installation)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#disclaimer)
+
+## ➤ Disclaimer
+
+ts-wapitis-plugin is a fork of [lit-analyzer](https://github.com/runem/lit-analyzer). It was created to work with [wapitis](https://nicolasboyer.github.io/wapitis/docs/pages/utils.html).
+
+The only modification is the add of [https://github.com/NicolasBoyer/web-component-analyzer](https://github.com/NicolasBoyer/web-component-analyzer) which is a fork of [https://github.com/runem/web-component-analyzer](https://github.com/runem/web-component-analyzer) to add wapitis specific configuration.
+
+Prefer ts-lit-plugin to work with any other configuration than wapitis.
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#installation)
 
 ## ➤ Installation
 
 First, install the plugin:
 
 ```bash
-npm install ts-lit-plugin -D
+npm install ts-wapitis-plugin -D
 ```
 
 
@@ -47,14 +58,14 @@ Then add a `plugins` section to your [`tsconfig.json`](http://www.typescriptlang
 Finally, restart you Typescript Language Service, and you should start getting diagnostics from `ts-lit-plugin`.
 
 **Note:**
-* If you use Visual Studio Code you can also install the [lit-plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin) extension. 
+* If you use Visual Studio Code you can also install the [lit-plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin) extension.
 * If you would rather use a CLI, you can install the [lit-analyzer](https://github.com/runem/lit-analyzer/blob/master/packages/lit-analyzer).
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#configuration)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#configuration)
 
 ## ➤ Configuration
 
-You can configure this plugin through your `tsconfig.json`. 
+You can configure this plugin through your `tsconfig.json`.
 
 ### Example
 
@@ -63,7 +74,7 @@ You can configure this plugin through your `tsconfig.json`.
   "compilerOptions": {
     "plugins": [
       {
-        "name": "ts-lit-plugin",
+        "name": "ts-wapitis-plugin",
         "strict": true,
         "rules": {
           "no-unknown-tag-name": "off",
@@ -92,7 +103,7 @@ You can configure this plugin through your `tsconfig.json`.
 | `customHtmlData` | This plugin supports the [custom vscode html data format](https://code.visualstudio.com/updates/v1_31#_html-and-css-custom-data-support) through this setting. | [Vscode Custom HTML Data Format](https://github.com/Microsoft/vscode-html-languageservice/blob/master/docs/customData.md). Supports arrays, objects and relative file paths | |
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#rules)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#rules)
 
 ## ➤ Rules
 
@@ -567,7 +578,7 @@ css`
 `
 ```
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#documenting-slots-events-attributes-and-properties)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#documenting-slots-events-attributes-and-properties)
 
 ## ➤ Documenting slots, events, attributes and properties
 
@@ -594,17 +605,17 @@ customElements.define("my-element", MyElement);
 
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#contributors)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#contributors)
 
 ## ➤ Contributors
 	
 
-| [<img alt="Rune Mehlsen" src="https://avatars2.githubusercontent.com/u/5372940?s=460&v=4" width="100">](https://twitter.com/runemehlsen) | [<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md) |
+| [<img alt="Rune Mehlsen" src="https://avatars2.githubusercontent.com/u/5372940?s=460&v=4" width="100">](https://twitter.com/runemehlsen) | [<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="Nicolas Boyer" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md) |
 |:--------------------------------------------------:|:--------------------------------------------------:|:--------------------------------------------------:|
-| [Rune Mehlsen](https://twitter.com/runemehlsen)  | [Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md) |
+| [Rune Mehlsen](https://twitter.com/runemehlsen)  | [Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [Nicolas Boyer](https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md) |
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#license)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#license)
 
 ## ➤ License
 	
