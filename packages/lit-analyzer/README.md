@@ -15,7 +15,7 @@
 
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#disclaimer)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#disclaimer)
 
 ## ➤ Disclaimer
 
@@ -23,8 +23,10 @@ wapitis-analyzer is a fork of [lit-analyzer](https://github.com/runem/lit-analyz
 
 The only modification is the add of [https://github.com/NicolasBoyer/web-component-analyzer](https://github.com/NicolasBoyer/web-component-analyzer) which is a fork of [https://github.com/runem/web-component-analyzer](https://github.com/runem/web-component-analyzer) to add wapitis specific configuration.
 
+Prefer lit-analyzer to work with any other configuration than wapitis.
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#installation)
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#installation)
 
 ## ➤ Installation
 
@@ -37,7 +39,7 @@ npm install wapitis-analyzer -g
 * If you use Visual Studio Code you can also install the [wapitis-plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin) extension.
 * If you use Typescript you can also install [ts-wapitis-plugin](https://github.com/runem/lit-analyzer/blob/master/packages/ts-lit-plugin).
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#usage)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#usage)
 
 ## ➤ Usage
 
@@ -53,7 +55,7 @@ lit-analyzer my-element.js
 lit-analyzer --format markdown --outFile result.md
 ```
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#configuration)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#configuration)
 
 ## ➤ Configuration
 
@@ -67,20 +69,20 @@ lit-analyzer --strict --rules.no-unknown-tag-name off --format markdown
 
 ### Available arguments
 
-| Option | Description | Type | Default |
-| :----- | ----------- | ---- | ------- |
-| `--help` | Print help message | `boolean` | |
-| `--rules.rule-name` | Enable or disable rules (example: --rules.no-unknown-tag-name off). Severity can be "off" \| "warn" \| "error". See a list of rules [here](https://github.com/runem/lit-analyzer/blob/master/docs/readme/rules.md). | `{"rule-name": "off" \| "warn" \| "error"}` |  |
-| `--strict` | Enable strict mode. This changes the default ruleset | `boolean` | |
-| `--format` | Change the format of how diagnostics are reported | `code` \| `list` \| `markdown` | code |
-| `--maxWarnings` | Fail only when the number of warnings is larger than this number | `number` | 0 |
-| `--outFile` | Emit all output to a single file  | `filePath` |  |
-| `--quiet` | Report only errors and not warnings | `boolean` |  |
-| `--failFast` | Exit the process right after the first problem has been found | `boolean` | |
-| `--debug` | Enable CLI debug mode | `boolean` |  |
+| Option              | Description                                                                                                                                                                                                         | Type                                        | Default |
+| :------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ------- |
+| `--help`            | Print help message                                                                                                                                                                                                  | `boolean`                                   |         |
+| `--rules.rule-name` | Enable or disable rules (example: --rules.no-unknown-tag-name off). Severity can be "off" \| "warn" \| "error". See a list of rules [here](https://github.com/runem/lit-analyzer/blob/master/docs/readme/rules.md). | `{"rule-name": "off" \| "warn" \| "error"}` |         |
+| `--strict`          | Enable strict mode. This changes the default ruleset                                                                                                                                                                | `boolean`                                   |         |
+| `--format`          | Change the format of how diagnostics are reported                                                                                                                                                                   | `code` \| `list` \| `markdown`              | code    |
+| `--maxWarnings`     | Fail only when the number of warnings is larger than this number                                                                                                                                                    | `number`                                    | 0       |
+| `--outFile`         | Emit all output to a single file                                                                                                                                                                                    | `filePath`                                  |         |
+| `--quiet`           | Report only errors and not warnings                                                                                                                                                                                 | `boolean`                                   |         |
+| `--failFast`        | Exit the process right after the first problem has been found                                                                                                                                                       | `boolean`                                   |         |
+| `--debug`           | Enable CLI debug mode                                                                                                                                                                                               | `boolean`                                   |         |
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#rules)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#rules)
 
 ## ➤ Rules
 
@@ -91,54 +93,54 @@ Each rule can have severity of `off`, `warning` or `error`. You can toggle rules
 **Validating custom elements**
 
 <!-- prettier-ignore -->
-| Rule    | Description | Severity normal | Severity strict |
-| :------ | ----------- | --------------- | --------------- |
-| [no-unknown-tag-name](#-no-unknown-tag-name) | The existence of tag names are checked. Be aware that not all custom elements from libraries will be found out of the box. | off | warning |
-| [no-missing-import](#-no-missing-import)    | When using custom elements in HTML it is checked if the element has been imported and is available in the current context. | off | warning |
-| [no-unclosed-tag](#-no-unclosed-tag)         | Unclosed tags, and invalid self closing tags like custom elements tags, are checked. | warning | error |
+| Rule                                         | Description                                                                                                                | Severity normal | Severity strict |
+| :------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | --------------- | --------------- |
+| [no-unknown-tag-name](#-no-unknown-tag-name) | The existence of tag names are checked. Be aware that not all custom elements from libraries will be found out of the box. | off             | warning         |
+| [no-missing-import](#-no-missing-import)     | When using custom elements in HTML it is checked if the element has been imported and is available in the current context. | off             | warning         |
+| [no-unclosed-tag](#-no-unclosed-tag)         | Unclosed tags, and invalid self closing tags like custom elements tags, are checked.                                       | warning         | error           |
 
 
 **Validating binding names**
 
 <!-- prettier-ignore -->
-| Rule    | Description | Severity normal | Severity strict |
-| :------ | ----------- | --------------- | --------------- |
-| [no-unknown-attribute](#-no-unknown-attribute-no-unknown-property)<br> [no-unknown-property](#-no-unknown-attribute-no-unknown-property) | You will get a warning whenever you use an unknown attribute or property within your `lit-html` template. | off | warning |
-| [no-unknown-event](#-no-unknown-event)       | When using event bindings it's checked that the event names are fired. | off | off |
-| [no-unknown-slot](#-no-unknown-slot)         | Using the "@slot" jsdoc tag on your custom element class, you can tell which slots are accepted for a particular element. | off | warning |
+| Rule                                                                                                                                     | Description                                                                                                               | Severity normal | Severity strict |
+| :--------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------- | --------------- |
+| [no-unknown-attribute](#-no-unknown-attribute-no-unknown-property)<br> [no-unknown-property](#-no-unknown-attribute-no-unknown-property) | You will get a warning whenever you use an unknown attribute or property within your `lit-html` template.                 | off             | warning         |
+| [no-unknown-event](#-no-unknown-event)                                                                                                   | When using event bindings it's checked that the event names are fired.                                                    | off             | off             |
+| [no-unknown-slot](#-no-unknown-slot)                                                                                                     | Using the "@slot" jsdoc tag on your custom element class, you can tell which slots are accepted for a particular element. | off             | warning         |
 
 
 **Validating binding types**
 
 <!-- prettier-ignore -->
-| Rule    | Description | Severity normal | Severity strict |
-| :------ | ----------- | --------------- | --------------- |
-| [no-invalid-boolean-binding](#-no-invalid-boolean-binding)       | Disallow boolean attribute bindings on non-boolean types. | error | error |
-| [no-expressionless-property-binding](#-no-expressionless-property-binding) | Disallow property bindings without an expression. | error | error |
-| [no-noncallable-event-binding](#-no-noncallable-event-binding)   | Disallow event listener bindings with a noncallable type. | error | error |
-| [no-boolean-in-attribute-binding](#-no-boolean-in-attribute-binding) | Disallow attribute bindings with a boolean type. | error | error |
-| [no-complex-attribute-binding](#-no-complex-attribute-binding)   | Disallow attribute bindings with a complex type. | error | error |
-| [no-nullable-attribute-binding](#-no-nullable-attribute-binding) | Disallow attribute bindings with nullable types such as "null" or "undefined".  | error | error |
-| [no-incompatible-type-binding](#-no-incompatible-type-binding)   | Disallow incompatible type in bindings.  | error | error |
-| [no-invalid-directive-binding](#-no-invalid-directive-binding)   | Disallow using built-in directives in unsupported bindings. | error | error |
-| [no-unintended-mixed-binding](#-no-unintended-mixed-binding)   | Disallow mixed value bindings where a character `'`, `"`, `}` or `/` is unintentionally included in the binding. | warn | warn |
+| Rule                                                                       | Description                                                                                                      | Severity normal | Severity strict |
+| :------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | --------------- | --------------- |
+| [no-invalid-boolean-binding](#-no-invalid-boolean-binding)                 | Disallow boolean attribute bindings on non-boolean types.                                                        | error           | error           |
+| [no-expressionless-property-binding](#-no-expressionless-property-binding) | Disallow property bindings without an expression.                                                                | error           | error           |
+| [no-noncallable-event-binding](#-no-noncallable-event-binding)             | Disallow event listener bindings with a noncallable type.                                                        | error           | error           |
+| [no-boolean-in-attribute-binding](#-no-boolean-in-attribute-binding)       | Disallow attribute bindings with a boolean type.                                                                 | error           | error           |
+| [no-complex-attribute-binding](#-no-complex-attribute-binding)             | Disallow attribute bindings with a complex type.                                                                 | error           | error           |
+| [no-nullable-attribute-binding](#-no-nullable-attribute-binding)           | Disallow attribute bindings with nullable types such as "null" or "undefined".                                   | error           | error           |
+| [no-incompatible-type-binding](#-no-incompatible-type-binding)             | Disallow incompatible type in bindings.                                                                          | error           | error           |
+| [no-invalid-directive-binding](#-no-invalid-directive-binding)             | Disallow using built-in directives in unsupported bindings.                                                      | error           | error           |
+| [no-unintended-mixed-binding](#-no-unintended-mixed-binding)               | Disallow mixed value bindings where a character `'`, `"`, `}` or `/` is unintentionally included in the binding. | warn            | warn            |
 
 **Validating LitElement**
 
 <!-- prettier-ignore -->
-| Rule    | Description | Severity normal | Severity strict |
-| :------ | ----------- | --------------- | --------------- |
-| [no-incompatible-property-type](#-no-incompatible-property-type) | When using the @property decorator in Typescript, the property option `type` is checked against the declared property Typescript type | error | error |
-| [no-unknown-property-converter](#-no-unknown-property-converter) | LitElement provides default converters. For example 'Function' is not a valid default converter type for a LitElement-managed property. | error | error |
-| [no-invalid-attribute-name](#-no-invalid-attribute-name)         | When using the property option `attribute`, the value is checked to make sure it's a valid attribute name. | error | error |
-| [no-invalid-tag-name](#-no-invalid-tag-name)                     | When defining a custom element the tag name is checked to make sure it's valid. | error | error |
+| Rule                                                             | Description                                                                                                                             | Severity normal | Severity strict |
+| :--------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------- | --------------- |
+| [no-incompatible-property-type](#-no-incompatible-property-type) | When using the @property decorator in Typescript, the property option `type` is checked against the declared property Typescript type   | error           | error           |
+| [no-unknown-property-converter](#-no-unknown-property-converter) | LitElement provides default converters. For example 'Function' is not a valid default converter type for a LitElement-managed property. | error           | error           |
+| [no-invalid-attribute-name](#-no-invalid-attribute-name)         | When using the property option `attribute`, the value is checked to make sure it's a valid attribute name.                              | error           | error           |
+| [no-invalid-tag-name](#-no-invalid-tag-name)                     | When defining a custom element the tag name is checked to make sure it's valid.                                                         | error           | error           |
 
 **Validating CSS**
 
 <!-- prettier-ignore -->
-| Rule    | Description | Severity normal | Severity strict |
-| :------ | ----------- | --------------- | --------------- |
-| [💅 no-invalid-css](#-no-invalid-css) | CSS within the tagged template literal `css` will be validated. | warning | error |
+| Rule                                  | Description                                                     | Severity normal | Severity strict |
+| :------------------------------------ | --------------------------------------------------------------- | --------------- | --------------- |
+| [💅 no-invalid-css](#-no-invalid-css) | CSS within the tagged template literal `css` will be validated. | warning         | error           |
 
 
 ### Validating custom elements
@@ -201,7 +203,7 @@ Attributes, properties and events are picked up on custom elements using [web-co
 
 #### ✅ no-unknown-attribute, no-unknown-property
 
-You will get a warning whenever you use an unknown attribute or property. This check is made on both custom elements and built in elements. 
+You will get a warning whenever you use an unknown attribute or property. This check is made on both custom elements and built in elements.
 
 **The following example is considered a warning:**
 ```js
@@ -215,7 +217,7 @@ html`<input .value="${value}" type="button" />`
 
 #### ⚡️ no-unknown-event
 
-You can opt in to check for unknown event names. Using the `@fires` jsdoc or the statement `this.dispatch(new CustomElement("my-event))` will make the event name available. All event names are accepted globally because events bubble. 
+You can opt in to check for unknown event names. Using the `@fires` jsdoc or the statement `this.dispatch(new CustomElement("my-event))` will make the event name available. All event names are accepted globally because events bubble.
 
 The following example is considered a warning:
 ```js
@@ -297,7 +299,7 @@ html`<input .value="${text}" />`
 
 #### 🌀 no-noncallable-event-binding
 
-It's a common mistake to incorrectly call the function when setting up an event handler binding instead of passing a reference to the function. This makes the function call whenever the code evaluates. 
+It's a common mistake to incorrectly call the function when setting up an event handler binding instead of passing a reference to the function. This makes the function call whenever the code evaluates.
 
 The following examples are considered warnings:
 ```js
@@ -342,7 +344,7 @@ html`<my-list .listItems="${listItems}"></my-list>`
 ```
 
 
-#### ⭕️ no-nullable-attribute-binding 
+#### ⭕️ no-nullable-attribute-binding
 
 Binding `undefined` or `null` in an attribute binding will result in binding the string "undefined" or "null". Here you should probably wrap your expression in the "ifDefined" directive.
 
@@ -380,7 +382,7 @@ html`<my-list .listItems="${listItems}"></my-list>`
 
 #### 💥 no-invalid-directive-binding
 
-Directives are checked to make sure that the following rules are met: 
+Directives are checked to make sure that the following rules are met:
 * `ifDefined` is only used in an attribute binding.
 * `class` is only used in an attribute binding on the 'class' attribute.
 * `style` is only used in an attribute binding on the 'style' attribute.
@@ -535,7 +537,7 @@ customElements.define("correct-element-name", MyElement);
 
 #### 💅 no-invalid-css
 
-CSS within the tagged template literal `css` will be validated. 
+CSS within the tagged template literal `css` will be validated.
 
 The following example is considered a warning:
 ```js
@@ -555,7 +557,7 @@ css`
 `
 ```
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#documenting-slots-events-attributes-and-properties)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#documenting-slots-events-attributes-and-properties)
 
 ## ➤ Documenting slots, events, attributes and properties
 
@@ -574,7 +576,7 @@ Code is analyzed using [web-component-analyzer](https://github.com/runem/web-com
  * @slot right - Right content
  * @slot left
  */
-class MyElement extends HTMLElement { 
+class MyElement extends HTMLElement {
 }
 
 customElements.define("my-element", MyElement);
@@ -582,18 +584,18 @@ customElements.define("my-element", MyElement);
 
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#contributors)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#contributors)
 
 ## ➤ Contributors
-	
+
 
 | [<img alt="Rune Mehlsen" src="https://avatars2.githubusercontent.com/u/5372940?s=460&v=4" width="100">](https://twitter.com/runemehlsen) | [<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="Nicolas Boyer" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md) |
-|:--------------------------------------------------:|:--------------------------------------------------:|:--------------------------------------------------:|
-| [Rune Mehlsen](https://twitter.com/runemehlsen)  | [Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [Nicolas Boyer](https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md) |
+| :--------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                             [Rune Mehlsen](https://twitter.com/runemehlsen)                                              |                                             [Andreas Mehlsen](https://twitter.com/andreasmehlsen)                                              |                                 [Nicolas Boyer](https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md)                                  |
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#license)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)](#license)
 
 ## ➤ License
-	
+
 Licensed under [MIT](https://opensource.org/licenses/MIT).
