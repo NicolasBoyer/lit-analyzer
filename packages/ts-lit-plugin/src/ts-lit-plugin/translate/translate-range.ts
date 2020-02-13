@@ -1,4 +1,4 @@
-import { DocumentRange } from "lit-analyzer";
+import { DocumentRange } from "wapitis-analyzer";
 import { TextSpan } from "typescript";
 
 export function translateRange(range: DocumentRange): TextSpan {

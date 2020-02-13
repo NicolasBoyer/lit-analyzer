@@ -1,4 +1,4 @@
-import { LitFormatEdit } from "lit-analyzer";
+import { LitFormatEdit } from "wapitis-analyzer";
 import * as ts from "typescript";
 import { translateRange } from "./translate-range";
 

@@ -1,4 +1,4 @@
-import { LitOutliningSpan } from "lit-analyzer";
+import { LitOutliningSpan } from "wapitis-analyzer";
 import { translateRange } from "./translate-range";
 
 export function translateOutliningSpans(outliningSpans: LitOutliningSpan[]): ts.OutliningSpan[] {

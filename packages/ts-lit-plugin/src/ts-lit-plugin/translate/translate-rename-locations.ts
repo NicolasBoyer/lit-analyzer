@@ -1,4 +1,4 @@
-import { LitRenameLocation } from "lit-analyzer";
+import { LitRenameLocation } from "wapitis-analyzer";
 import { translateRange } from "./translate-range";
 import { RenameLocation } from "typescript";
 

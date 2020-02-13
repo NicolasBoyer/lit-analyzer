@@ -1,4 +1,4 @@
-import { LitQuickInfo } from "lit-analyzer";
+import { LitQuickInfo } from "wapitis-analyzer";
 import { QuickInfo } from "typescript";
 import { tsModule } from "../../ts-module";
 import { translateRange } from "./translate-range";
@@ -18,10 +18,10 @@ export function translateQuickInfo(quickInfo: LitQuickInfo): QuickInfo {
 			quickInfo.secondaryInfo == null
 				? []
 				: [
-						{
-							kind: "text",
-							text: quickInfo.secondaryInfo
-						}
-				  ]
+					{
+						kind: "text",
+						text: quickInfo.secondaryInfo
+					}
+				]
 	};
 }

@@ -1,4 +1,4 @@
-import { DefaultLitAnalyzerContext, LitAnalyzerConfig } from "lit-analyzer";
+import { DefaultLitAnalyzerContext, LitAnalyzerConfig } from "wapitis-analyzer";
 import { logger } from "../logger";
 
 export class LitPluginContext extends DefaultLitAnalyzerContext {

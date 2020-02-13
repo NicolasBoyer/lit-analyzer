@@ -1,4 +1,4 @@
-import { LitAnalyzerContext, LitDiagnostic } from "lit-analyzer";
+import { LitAnalyzerContext, LitDiagnostic } from "wapitis-analyzer";
 import { DiagnosticMessageChain, DiagnosticWithLocation, SourceFile } from "typescript";
 import { translateRange } from "./translate-range";
 
@@ -22,17 +22,17 @@ function translateDiagnostic(diagnostic: LitDiagnostic, file: SourceFile, contex
 	const messageText: string | DiagnosticMessageChain =
 		!context.config.dontShowSuggestions && diagnostic.suggestion
 			? {
-					messageText: getMessageTextFromDiagnostic(diagnostic),
-					code,
-					category,
-					next: [
-						{
-							messageText: diagnostic.suggestion,
-							code: 0,
-							category: context.ts.DiagnosticCategory.Suggestion
-						}
-					]
-			  }
+				messageText: getMessageTextFromDiagnostic(diagnostic),
+				code,
+				category,
+				next: [
+					{
+						messageText: diagnostic.suggestion,
+						code: 0,
+						category: context.ts.DiagnosticCategory.Suggestion
+					}
+				]
+			}
 			: getMessageTextFromDiagnostic(diagnostic);
 
 	if (Number(context.ts.versionMajorMinor) < 3.6 && typeof messageText !== "string") {

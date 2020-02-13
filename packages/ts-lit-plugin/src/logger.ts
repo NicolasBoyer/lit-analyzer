@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { appendFileSync, writeFileSync } from "fs";
-import { DefaultLitAnalyzerLogger, LitAnalyzerLoggerLevel } from "lit-analyzer";
+import { DefaultLitAnalyzerLogger, LitAnalyzerLoggerLevel } from "wapitis-analyzer";
 import { join } from "path";
 import { inspect } from "util";
 

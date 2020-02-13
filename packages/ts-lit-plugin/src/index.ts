@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { LitAnalyzerConfig, makeConfig, VERSION, LitAnalyzerLoggerLevel } from "lit-analyzer";
+import { LitAnalyzerConfig, makeConfig, VERSION, LitAnalyzerLoggerLevel } from "wapitis-analyzer";
 import * as ts from "typescript";
 import * as tsServer from "typescript/lib/tsserverlibrary";
 import { VERSION as WCA_VERSION } from "web-component-analyzer";

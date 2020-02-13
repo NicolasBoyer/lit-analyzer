@@ -1,4 +1,4 @@
-import { LitAnalyzerConfig, makeConfig, DefaultLitAnalyzerContext, LitAnalyzerContext, LitAnalyzer } from "lit-analyzer";
+import { LitAnalyzerConfig, makeConfig, DefaultLitAnalyzerContext, LitAnalyzerContext, LitAnalyzer } from "wapitis-analyzer";
 import ts from "typescript";
 import { translateDiagnostics } from "./ts-lit-plugin/translate/translate-diagnostics";
 

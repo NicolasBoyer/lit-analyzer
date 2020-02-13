@@ -1,4 +1,4 @@
-import { LitAnalyzer } from "lit-analyzer";
+import { LitAnalyzer } from "wapitis-analyzer";
 import {
 	CodeFixAction,
 	CompletionEntryDetails,
@@ -39,7 +39,7 @@ export class TsLitPlugin {
 		return this.prevLangService.getProgram()!;
 	}
 
-	constructor(private prevLangService: LanguageService, public readonly context: LitPluginContext) {}
+	constructor(private prevLangService: LanguageService, public readonly context: LitPluginContext) { }
 
 	getCompletionEntryDetails(
 		fileName: string,

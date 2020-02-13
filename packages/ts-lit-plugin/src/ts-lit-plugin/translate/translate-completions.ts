@@ -1,4 +1,4 @@
-import { LitCompletion } from "lit-analyzer";
+import { LitCompletion } from "wapitis-analyzer";
 import { CompletionEntry, CompletionInfo } from "typescript";
 import { translateTargetKind } from "./translate-target-kind";
 import { translateRange } from "./translate-range";

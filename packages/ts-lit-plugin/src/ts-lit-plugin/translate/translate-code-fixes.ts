@@ -1,7 +1,7 @@
 import { CodeFixAction, FileTextChanges, SourceFile } from "typescript";
 import { tsModule } from "../../ts-module";
 import { translateRange } from "./translate-range";
-import { CodeActionKind, LitCodeFix, LitCodeFixAction } from "lit-analyzer";
+import { CodeActionKind, LitCodeFix, LitCodeFixAction } from "wapitis-analyzer";
 
 export function translateCodeFixes(codeFixes: LitCodeFix[], file: SourceFile): CodeFixAction[] {
 	return codeFixes.map(codeFix => translateCodeFix(file, codeFix));

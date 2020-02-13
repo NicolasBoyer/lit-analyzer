@@ -1,4 +1,4 @@
-import { LitTargetKind } from "lit-analyzer";
+import { LitTargetKind } from "wapitis-analyzer";
 import { ScriptElementKind } from "typescript";
 import { tsModule } from "../../ts-module";
 

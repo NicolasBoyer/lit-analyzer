@@ -1,4 +1,4 @@
-import { LitDefinition } from "lit-analyzer";
+import { LitDefinition } from "wapitis-analyzer";
 import { DefinitionInfoAndBoundSpan } from "typescript";
 import { tsModule } from "../../ts-module";
 import { translateRange } from "./translate-range";

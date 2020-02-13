@@ -1,6 +1,6 @@
 ## Configuration
 
-You can configure this plugin through your `tsconfig.json`. 
+You can configure this plugin through your `tsconfig.json`.
 
 ### Example
 

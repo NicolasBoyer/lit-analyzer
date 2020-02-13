@@ -1,4 +1,4 @@
-import { LitCompletionDetails } from "lit-analyzer";
+import { LitCompletionDetails } from "wapitis-analyzer";
 import { CompletionEntryDetails } from "typescript";
 import { LitPluginContext } from "../lit-plugin-context";
 
@@ -17,10 +17,10 @@ export function translateCompletionDetails(completionDetails: LitCompletionDetai
 			completionDetails.secondaryInfo == null
 				? []
 				: [
-						{
-							kind: "text",
-							text: completionDetails.secondaryInfo
-						}
-				  ]
+					{
+						kind: "text",
+						text: completionDetails.secondaryInfo
+					}
+				]
 	};
 }

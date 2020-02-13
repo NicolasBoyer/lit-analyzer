@@ -1,4 +1,4 @@
-import { LitRenameInfo } from "lit-analyzer";
+import { LitRenameInfo } from "wapitis-analyzer";
 import { RenameInfo } from "typescript";
 import { translateTargetKind } from "./translate-target-kind";
 import { translateRange } from "./translate-range";
