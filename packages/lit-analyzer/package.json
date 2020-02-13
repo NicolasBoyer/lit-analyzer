@@ -1,12 +1,12 @@
 {
-	"name": "lit-analyzer",
-	"version": "1.1.9",
-	"description": "CLI that type checks bindings in lit-html templates",
-	"author": "runem",
+	"name": "wapitis-analyzer",
+	"version": "1.0.1",
+	"description": "CLI that type checks bindings in lit-html templates in a wapitis component",
+	"author": "Nicolas Boyer, runem",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/runem/lit-analyzer.git"
+		"url": "https://github.com/NicolasBoyer/lit-analyzer.git"
 	},
 	"keywords": [
 		"lit-html",
@@ -18,7 +18,8 @@
 		"web",
 		"components",
 		"tagged",
-		"template"
+		"template",
+		"wapitis"
 	],
 	"bin": {
 		"lit-analyzer": "cli.js"
@@ -86,8 +87,7 @@
 			"src/**/*"
 		]
 	},
-	"contributors": [
-		{
+	"contributors": [{
 			"name": "Rune Mehlsen",
 			"url": "https://twitter.com/runemehlsen",
 			"img": "https://avatars2.githubusercontent.com/u/5372940?s=460&v=4"
@@ -98,7 +98,7 @@
 			"img": "https://avatars1.githubusercontent.com/u/6267397?s=460&v=4"
 		},
 		{
-			"name": "You?",
+			"name": "Nicolas Boyer",
 			"img": "https://joeschmoe.io/api/v1/random",
 			"url": "https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md"
 		}

@@ -1,20 +1,27 @@
-<h1 align="center">lit-analyzer</h1>
+<h1 align="center">wapitis-analyzer</h1>
 <p align="center">
-  <b>CLI that type checks bindings in lit-html templates</b></br>
+  <b>CLI that type checks bindings in lit-html templates in a wapitis component</b></br>
   <sub><sub>
 </p>
 
 <br />
 
 <p align="center">
-		<a href="https://npmcharts.com/compare/lit-analyzer?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/lit-analyzer.svg" height="20"/></a>
-<a href="https://www.npmjs.com/package/lit-analyzer"><img alt="NPM Version" src="https://img.shields.io/npm/v/lit-analyzer.svg" height="20"/></a>
-<a href="https://david-dm.org/runem/lit-analyzer"><img alt="Dependencies" src="https://img.shields.io/david/runem/lit-analyzer.svg" height="20"/></a>
-<a href="https://github.com/runem/lit-analyzer/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/runem/lit-analyzer.svg" height="20"/></a>
+		<a href="https://npmcharts.com/compare/wapitis-analyzer?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/wapitis-analyzer.svg" height="20"/></a>
+<a href="https://www.npmjs.com/package/wapitis-analyzer"><img alt="NPM Version" src="https://img.shields.io/npm/v/wapitis-analyzer.svg" height="20"/></a>
+<a href="https://david-dm.org/NicolasBoyer/lit-analyzer"><img alt="Dependencies" src="https://img.shields.io/david/NicolasBoyer/lit-analyzer.svg" height="20"/></a>
+<a href="https://github.com/NicolasBoyer/lit-analyzer/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/NicolasBoyer/lit-analyzer.svg" height="20"/></a>
 	</p>
 
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#disclaimer)
+
+## ➤ Disclaimer
+
+wapitis-analyzer is a fork of [lit-analyzer](https://github.com/runem/lit-analyzer). It was created to work with [wapitis](https://nicolasboyer.github.io/wapitis/docs/pages/utils.html)
+
+The only modification is the add of [https://github.com/NicolasBoyer/web-component-analyzer](https://github.com/NicolasBoyer/web-component-analyzer) which is a fork of [https://github.com/runem/web-component-analyzer](https://github.com/runem/web-component-analyzer) to add wapitis specific configuration.
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#installation)
@@ -23,16 +30,18 @@
 
 <!-- prettier-ignore -->
 ```bash
-npm install lit-analyzer -g
+npm install wapitis-analyzer -g
 ```
 
 **Note:**
-* If you use Visual Studio Code you can also install the [lit-plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin) extension. 
-* If you use Typescript you can also install [ts-lit-plugin](https://github.com/runem/lit-analyzer/blob/master/packages/ts-lit-plugin).
+* If you use Visual Studio Code you can also install the [wapitis-plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin) extension.
+* If you use Typescript you can also install [ts-wapitis-plugin](https://github.com/runem/lit-analyzer/blob/master/packages/ts-lit-plugin).
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#usage)
 
 ## ➤ Usage
+
+It works like lit-analyzer but it's not recommanded to use wapitis-analyzer like this. Prefer lit-analyzer in this case !
 
 `lit-analyzer` analyzes an optional `input glob` and emits the output to the console as default. When the `input glob` is omitted it will analyze all components in `src`.
 
@@ -41,7 +50,7 @@ npm install lit-analyzer -g
 lit-analyzer src
 lit-analyzer "src/**/*.{js,ts}"
 lit-analyzer my-element.js
-lit-analyzer --format markdown --outFile result.md 
+lit-analyzer --format markdown --outFile result.md
 ```
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#configuration)
@@ -578,9 +587,9 @@ customElements.define("my-element", MyElement);
 ## ➤ Contributors
 	
 
-| [<img alt="Rune Mehlsen" src="https://avatars2.githubusercontent.com/u/5372940?s=460&v=4" width="100">](https://twitter.com/runemehlsen) | [<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md) |
+| [<img alt="Rune Mehlsen" src="https://avatars2.githubusercontent.com/u/5372940?s=460&v=4" width="100">](https://twitter.com/runemehlsen) | [<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="Nicolas Boyer" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md) |
 |:--------------------------------------------------:|:--------------------------------------------------:|:--------------------------------------------------:|
-| [Rune Mehlsen](https://twitter.com/runemehlsen)  | [Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md) |
+| [Rune Mehlsen](https://twitter.com/runemehlsen)  | [Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [Nicolas Boyer](https://github.com/runem/lit-analyzer/blob/master/CONTRIBUTING.md) |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#license)

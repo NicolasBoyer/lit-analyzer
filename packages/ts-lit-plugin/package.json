@@ -33,15 +33,14 @@
 		"/html-documentation/"
 	],
 	"dependencies": {
-		"lit-analyzer": "1.1.9"
+		"lit-analyzer": "https://github.com/NicolasBoyer/lit-analyzer/tree/master/packages/lit-analyzer"
 	},
 	"devDependencies": {
 		"rimraf": "^3.0.0",
 		"@types/node": "^12.12.17",
 		"typescript": "^3.6.4"
 	},
-	"contributors": [
-		{
+	"contributors": [{
 			"name": "Rune Mehlsen",
 			"url": "https://twitter.com/runemehlsen",
 			"img": "https://avatars2.githubusercontent.com/u/5372940?s=460&v=4"

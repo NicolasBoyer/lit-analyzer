@@ -1,5 +1,7 @@
 ## Usage
 
+It works like lit-analyzer but it's not recommanded to use wapitis-analyzer like this. Prefer lit-analyzer in this case !
+
 `lit-analyzer` analyzes an optional `input glob` and emits the output to the console as default. When the `input glob` is omitted it will analyze all components in `src`.
 
 <!-- prettier-ignore -->
@@ -7,5 +9,5 @@
 lit-analyzer src
 lit-analyzer "src/**/*.{js,ts}"
 lit-analyzer my-element.js
-lit-analyzer --format markdown --outFile result.md 
+lit-analyzer --format markdown --outFile result.md
 ```
