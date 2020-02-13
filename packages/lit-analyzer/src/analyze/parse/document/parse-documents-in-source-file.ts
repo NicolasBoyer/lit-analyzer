@@ -1,10 +1,10 @@
 import { SourceFile, TaggedTemplateExpression } from "typescript";
+import { HtmlNodeKind, IHtmlNodeStyleTag } from "../../types/html-node/html-node-types";
 import { flatten, intersects } from "../../util/general-util";
 import { findTaggedTemplates } from "../tagged-template/find-tagged-templates";
 import { CssDocument } from "./text-document/css-document/css-document";
 import { HtmlDocument } from "./text-document/html-document/html-document";
 import { parseHtmlDocument } from "./text-document/html-document/parse-html-document";
-import { HtmlNodeKind, IHtmlNodeStyleTag } from "../../types/html-node/html-node-types";
 import { TextDocument } from "./text-document/text-document";
 import { VirtualAstCssDocument } from "./virtual-document/virtual-css-document";
 
@@ -23,7 +23,6 @@ export function parseDocumentsInSourceFile(
 	// Parse html tags in the relevant source file
 	const templateTags = [...options.cssTags, ...options.htmlTags];
 	const taggedTemplates = findTaggedTemplates(sourceFile, templateTags, position);
-
 	let result: TextDocument[] | TextDocument | undefined = undefined;
 
 	if (taggedTemplates == null) {
@@ -37,7 +36,12 @@ export function parseDocumentsInSourceFile(
 	if (result == null) return undefined;
 
 	if (Array.isArray(result)) {
-		return flatten(result.map(document => [document, ...(unpackHtmlDocument(document, position) || [])]));
+		return flatten(
+			result.map(document => {
+				const res = unpackHtmlDocument(document, position);
+				return [document, ...(res == null ? [] : Array.isArray(res) ? res : [res])];
+			})
+		);
 	} else {
 		const nestedDocuments = unpackHtmlDocument(result, position);
 		if (position != null && nestedDocuments != null) {
@@ -57,8 +61,8 @@ function taggedTemplateToDocument(taggedTemplate: TaggedTemplateExpression, { cs
 	}
 }
 
-function unpackHtmlDocument(textDocument: TextDocument, position?: number): TextDocument | undefined;
-function unpackHtmlDocument(textDocument: TextDocument): TextDocument[];
+function unpackHtmlDocument(textDocument: TextDocument, position: number): TextDocument | undefined;
+function unpackHtmlDocument(textDocument: TextDocument, position?: number): TextDocument | TextDocument[];
 function unpackHtmlDocument(textDocument: TextDocument, position?: number): TextDocument[] | TextDocument | undefined {
 	const documents: TextDocument[] = [];
 

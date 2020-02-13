@@ -6,6 +6,7 @@ import { HtmlNodeKind } from "../analyze/types/html-node/html-node-types";
 import { LitHtmlDiagnosticKind } from "../analyze/types/lit-diagnostic";
 import { RuleModule } from "../analyze/types/rule-module";
 import { suggestTargetForHtmlAttr } from "../analyze/util/attribute-util";
+import { iterableFirst } from "../analyze/util/iterable-util";
 
 /**
  * This rule validates that only known properties are used in bindings.
@@ -73,10 +74,10 @@ function getSuggestionText({
 		return undefined;
 	}
 
-	const definition = definitionStore.getDefinitionForTagName(htmlTag.tagName);
 	const tagHasDeclaration = htmlTag.declaration != null;
 	const tagIsBuiltIn = htmlTag.builtIn || false;
-	const tagIsFromLibrary = definition != null && definition.declaration.node.getSourceFile().isDeclarationFile;
+	const tagIsFromLibrary =
+		iterableFirst(definitionStore.getDefinitionForTagName(htmlTag.tagName)?.identifierNodes)?.getSourceFile().isDeclarationFile || false;
 
 	return tagIsBuiltIn
 		? `This is a built in tag. Please consider disabling the 'no-unknown-property' rule.`
