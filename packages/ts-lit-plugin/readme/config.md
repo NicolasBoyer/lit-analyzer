@@ -9,7 +9,7 @@ You can configure this plugin through your `tsconfig.json`.
   "compilerOptions": {
     "plugins": [
       {
-        "name": "ts-lit-plugin",
+        "name": "ts-wapitis-plugin",
         "strict": true,
         "rules": {
           "no-unknown-tag-name": "off",

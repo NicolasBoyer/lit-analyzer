@@ -1,7 +1,7 @@
 {
-	"line": "rainbow",
+	"line": "dark",
 	"ids": {
-		"github": "runem/lit-analyzer",
-		"npm": "ts-lit-plugin"
+		"github": "NicolasBoyer/lit-analyzer",
+		"npm": "ts-wapitis-plugin"
 	}
 }
