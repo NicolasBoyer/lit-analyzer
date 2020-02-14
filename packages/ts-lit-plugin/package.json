@@ -41,7 +41,8 @@
 		"@types/node": "^13.7.1",
 		"typescript": "^3.7.5"
 	},
-	"contributors": [{
+	"contributors": [
+		{
 			"name": "Rune Mehlsen",
 			"url": "https://twitter.com/runemehlsen",
 			"img": "https://avatars2.githubusercontent.com/u/5372940?s=460&v=4"
