@@ -1,6 +1,6 @@
 {
 	"name": "wapitis-analyzer",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "CLI that type checks bindings in lit-html templates in a wapitis component",
 	"author": "Nicolas Boyer, runem",
 	"license": "MIT",
@@ -48,7 +48,7 @@
 		"ts-simple-type": "~0.3.6",
 		"vscode-css-languageservice": "4.0.2-next.1",
 		"vscode-html-languageservice": "2.1.12",
-		"web-component-analyzer": "1.0.3"
+		"web-component-analyzer": "https://github.com/NicolasBoyer/web-component-analyzer"
 	},
 	"devDependencies": {
 		"rimraf": "^3.0.0",
