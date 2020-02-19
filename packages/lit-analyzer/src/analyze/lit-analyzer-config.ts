@@ -77,12 +77,12 @@ const DEFAULT_RULES_NOSTRICT: Required<LitAnalyzerRules> = {
 };
 
 const DEFAULT_RULES_STRICT: Required<LitAnalyzerRules> = {
-	"no-unknown-tag-name": "warn",
-	"no-missing-import": "warn",
+	"no-unknown-tag-name": "error",
+	"no-missing-import": "error",
 	"no-unclosed-tag": "error",
-	"no-unknown-attribute": "warn",
-	"no-unknown-property": "warn",
-	"no-unknown-event": "off",
+	"no-unknown-attribute": "error",
+	"no-unknown-property": "error",
+	"no-unknown-event": "error",
 	"no-unknown-slot": "warn",
 	"no-unintended-mixed-binding": "warn",
 	"no-invalid-boolean-binding": "error",
@@ -182,7 +182,7 @@ export function makeConfig(userOptions: Partial<LitAnalyzerConfig> = {}): LitAna
 	}
 
 	return {
-		strict: userOptions.strict || false,
+		strict: userOptions.strict !== undefined ? userOptions.strict : true,
 		rules: makeRules(userOptions),
 		securitySystem: userOptions.securitySystem || "off",
 
@@ -224,7 +224,7 @@ function getUserRules(userOptions: Partial<LitAnalyzerConfig>): LitAnalyzerRules
 }
 
 function getDefaultRules(userOptions: Partial<LitAnalyzerConfig>): LitAnalyzerRules {
-	const isStrict = userOptions.strict || false;
+	const isStrict = userOptions.strict !== undefined ? userOptions.strict : true;
 
 	if (isStrict) {
 		return DEFAULT_RULES_STRICT;
