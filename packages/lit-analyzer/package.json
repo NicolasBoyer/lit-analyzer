@@ -1,6 +1,6 @@
 {
 	"name": "wapitis-analyzer",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "CLI that type checks bindings in lit-html templates in a wapitis component",
 	"author": "Nicolas Boyer, runem",
 	"license": "MIT",
@@ -22,7 +22,7 @@
 		"wapitis"
 	],
 	"bin": {
-		"lit-analyzer": "cli.js"
+		"wapitis-analyzer": "cli.js"
 	},
 	"scripts": {
 		"clean": "rimraf lib",

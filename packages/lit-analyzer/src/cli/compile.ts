@@ -80,7 +80,7 @@ export function readTsLitPluginConfig(options?: CompilerOptions): LitAnalyzerCon
 
 	if (options != null && "plugins" in options) {
 		const plugins = options.plugins as ({ name: string } & LitAnalyzerConfig)[];
-		const tsLitPluginOptions = plugins.find(plugin => plugin.name === "ts-lit-plugin");
+		const tsLitPluginOptions = plugins.find(plugin => plugin.name === "ts-wapitis-plugin");
 		if (tsLitPluginOptions != null) {
 			return makeConfig(tsLitPluginOptions);
 		}
