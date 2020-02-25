@@ -1,7 +1,7 @@
 import { isAssignableToSimpleTypeKind, SimpleType, SimpleTypeKind, toSimpleType, toTypeString } from "ts-simple-type";
 import { Node } from "typescript";
 import { ComponentMember } from "web-component-analyzer";
-import { LitElementPropertyConfig } from "web-component-analyzer";
+import { WapitisPropertyConfig } from "web-component-analyzer/lib/cjs/wapitis-property-config-7a2b786a";
 import { litDiagnosticRuleSeverity } from "../analyze/lit-analyzer-config";
 import { LitAnalyzerRequest } from "../analyze/lit-analyzer-context";
 import { LitHtmlDiagnostic, LitHtmlDiagnosticKind } from "../analyze/types/lit-diagnostic";
@@ -112,12 +112,12 @@ function prepareSimpleAssignabilityTester(
  */
 function validateLitPropertyConfig(
 	node: Node,
-	litConfig: LitElementPropertyConfig,
+	litConfig: WapitisPropertyConfig,
 	{ propName, simplePropType }: { propName: string; simplePropType: SimpleType },
 	request: LitAnalyzerRequest
 ): LitHtmlDiagnostic[] | void {
 	// Check if "type" is one of the built in default type converter hint
-	if (typeof litConfig.type === "string" && !litConfig.hasConverter) {
+	if (typeof litConfig.type === "string") {
 		return [
 			{
 				kind: LitHtmlDiagnosticKind.INVALID_PROPERTY_TYPE,
@@ -132,7 +132,7 @@ function validateLitPropertyConfig(
 
 	// Don't continue if we don't know the property type (eg if we are in a js file)
 	// Don't continue if this property has a custom converter (because then we don't know how the value will be converted)
-	if (simplePropType == null || litConfig.hasConverter || typeof litConfig.type === "string") {
+	if (simplePropType == null) {
 		return;
 	}
 
@@ -196,8 +196,8 @@ function validateLitPropertyConfig(
 			// Suggest types to use and include "{attribute: false}" if the @property type is ARRAY or OBJECT
 			const acceptedTypeText = joinArray(
 				[
-					...acceptedTypeKinds().map(kind => `'{type: ${toLitPropertyTypeString(kind)}}'`),
-					...(isAssignableTo(SimpleTypeKind.ARRAY) || isAssignableTo(SimpleTypeKind.OBJECT) ? ["'{attribute: false}'"] : [])
+					...acceptedTypeKinds().map(kind => `'{type: ${toLitPropertyTypeString(kind)}}'`)
+					// ...(isAssignableTo(SimpleTypeKind.ARRAY) || isAssignableTo(SimpleTypeKind.OBJECT) ? ["'{attribute: false}'"] : [])
 				],
 				", ",
 				"or"
