@@ -1,6 +1,6 @@
 {
 	"name": "ts-wapitis-plugin",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Typescript plugin that adds type checking and code completion to lit-html in a wapitis element",
 	"author": "runem, Nicolas Boyer",
 	"license": "MIT",
@@ -33,7 +33,7 @@
 		"/html-documentation/"
 	],
 	"dependencies": {
-		"wapitis-analyzer": "^1.0.10"
+		"wapitis-analyzer": "^1.0.11"
 	},
 	"devDependencies": {
 		"@appnest/readme": "^1.2.5",
@@ -41,8 +41,7 @@
 		"rimraf": "^3.0.2",
 		"typescript": "^3.7.5"
 	},
-	"contributors": [
-		{
+	"contributors": [{
 			"name": "Rune Mehlsen",
 			"url": "https://twitter.com/runemehlsen",
 			"img": "https://avatars2.githubusercontent.com/u/5372940?s=460&v=4"
