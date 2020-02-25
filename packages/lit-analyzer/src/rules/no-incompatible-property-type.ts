@@ -1,7 +1,7 @@
 import { isAssignableToSimpleTypeKind, SimpleType, SimpleTypeKind, toSimpleType, toTypeString } from "ts-simple-type";
 import { Node } from "typescript";
 import { ComponentMember } from "web-component-analyzer";
-import { LitElementPropertyConfig } from "web-component-analyzer/lib/cjs/lit-element-property-config-a6e5ad36";
+import { LitElementPropertyConfig } from "web-component-analyzer";
 import { litDiagnosticRuleSeverity } from "../analyze/lit-analyzer-config";
 import { LitAnalyzerRequest } from "../analyze/lit-analyzer-context";
 import { LitHtmlDiagnostic, LitHtmlDiagnosticKind } from "../analyze/types/lit-diagnostic";
