@@ -19,7 +19,6 @@ export type LitAnalyzerRuleName =
 	| "no-incompatible-type-binding"
 	| "no-invalid-directive-binding"
 	| "no-incompatible-property-type"
-	| "no-unknown-property-converter"
 	| "no-invalid-attribute-name"
 	| "no-invalid-tag-name"
 	| "no-invalid-css";
@@ -42,7 +41,6 @@ export const ALL_RULE_NAMES: LitAnalyzerRuleName[] = [
 	"no-incompatible-type-binding",
 	"no-invalid-directive-binding",
 	"no-incompatible-property-type",
-	"no-unknown-property-converter",
 	"no-invalid-attribute-name",
 	"no-invalid-tag-name",
 	"no-invalid-css"
@@ -70,7 +68,6 @@ const DEFAULT_RULES_NOSTRICT: Required<LitAnalyzerRules> = {
 	"no-incompatible-type-binding": "error",
 	"no-invalid-directive-binding": "error",
 	"no-incompatible-property-type": "error",
-	"no-unknown-property-converter": "error",
 	"no-invalid-attribute-name": "error",
 	"no-invalid-tag-name": "error",
 	"no-invalid-css": "warn"
@@ -94,7 +91,6 @@ const DEFAULT_RULES_STRICT: Required<LitAnalyzerRules> = {
 	"no-incompatible-type-binding": "error",
 	"no-invalid-directive-binding": "error",
 	"no-incompatible-property-type": "error",
-	"no-unknown-property-converter": "error",
 	"no-invalid-attribute-name": "error",
 	"no-invalid-tag-name": "error",
 	"no-invalid-css": "error"
