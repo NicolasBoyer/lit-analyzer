@@ -1,5 +1,5 @@
 import { TextSpan } from "typescript";
-import { LitRange } from "../../../../lit-analyzer/src/analyze/types/lit-range";
+import { LitRange } from "wapitis-analyzer";
 
 export function translateRange(range: LitRange): TextSpan {
 	if ("document" in range) {
