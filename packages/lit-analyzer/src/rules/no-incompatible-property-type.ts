@@ -1,7 +1,7 @@
 import { isAssignableToSimpleTypeKind, SimpleType, SimpleTypeKind, toSimpleType, toTypeString } from "ts-simple-type";
 import { Node } from "typescript";
 import { ComponentMember } from "web-component-analyzer";
-import { WapitisPropertyConfig } from "web-component-analyzer/lib/cjs/wapitis-property-config-7a2b786a";
+import { WapitisPropertyConfig } from "web-component-analyzer";
 import { litDiagnosticRuleSeverity } from "../analyze/lit-analyzer-config";
 import { LitAnalyzerRequest } from "../analyze/lit-analyzer-context";
 import { LitHtmlDiagnostic, LitHtmlDiagnosticKind } from "../analyze/types/lit-diagnostic";
@@ -196,8 +196,8 @@ function validateLitPropertyConfig(
 			// Suggest types to use and include "{attribute: false}" if the @property type is ARRAY or OBJECT
 			const acceptedTypeText = joinArray(
 				[
-					...acceptedTypeKinds().map(kind => `'{type: ${toLitPropertyTypeString(kind)}}'`)
-					// ...(isAssignableTo(SimpleTypeKind.ARRAY) || isAssignableTo(SimpleTypeKind.OBJECT) ? ["'{attribute: false}'"] : [])
+					...acceptedTypeKinds().map(kind => `'{type: ${toLitPropertyTypeString(kind)}}'`),
+					...["'{attribute: false}'"]
 				],
 				", ",
 				"or"
