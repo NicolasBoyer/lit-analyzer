@@ -89,11 +89,11 @@ export function convertComponentFeaturesToHtml(
 
 		result.attributes.push({
 			kind: "attribute",
-			name: `on${event.name}`,
+			name: `@${event.name}`,
 			description: event.jsDoc?.description,
 			getType: lazy(() => ({ kind: SimpleTypeKind.STRING } as SimpleType)),
 			declaration: {
-				attrName: `on${event.name}`,
+				attrName: `@${event.name}`,
 				jsDoc: event.jsDoc,
 				kind: "attribute",
 				node: event.node,

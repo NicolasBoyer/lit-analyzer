@@ -77,7 +77,7 @@ export class DefaultAnalyzerHtmlStore implements AnalyzerHtmlStore {
 				return this.dataSource.getAllAttributesForTag(htmlNodeAttr.htmlNode.tagName).get(name);
 
 			case HtmlNodeAttrKind.PROPERTY:
-				return this.dataSource.getAllPropertiesForTag(htmlNodeAttr.htmlNode.tagName).get(name);
+				return this.dataSource.getAllAttributesForTag(htmlNodeAttr.htmlNode.tagName).get(name) || this.dataSource.getAllPropertiesForTag(htmlNodeAttr.htmlNode.tagName).get(name);
 		}
 	}
 }

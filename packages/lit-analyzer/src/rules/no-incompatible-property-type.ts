@@ -181,8 +181,13 @@ function validateLitPropertyConfig(
 
 	// If no type has been specified, suggest what to use as the @property type
 	else if (litConfig.attribute !== false) {
+		// Don't do anything if there is a _ before property name because with wapitis, it means protected.
+		if (propName.startsWith("_")) {
+			return;
+		}
+
 		// Don't do anything if there are multiple possibilities for a type.
-		if (isAssignableTo(SimpleTypeKind.ANY)) {
+		else if (isAssignableTo(SimpleTypeKind.ANY)) {
 			return;
 		}
 

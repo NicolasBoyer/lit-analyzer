@@ -14,11 +14,11 @@ import { LitCompletion } from "../../../types/lit-completion";
 
 export function completionsForHtmlAttrs(htmlNode: HtmlNode, location: DocumentPositionContext, { htmlStore }: LitAnalyzerRequest): LitCompletion[] {
 	const onTagName = htmlNode.tagName;
+	const alreadyUsedAttrNames = htmlNode.attributes.map(a => a.name.toLowerCase());
 
 	// Code completions for ".[...]";
 	if (location.word.startsWith(LIT_HTML_PROP_ATTRIBUTE_MODIFIER)) {
-		const alreadyUsedPropNames = htmlNode.attributes.map(a => a.name.toLowerCase());
-		const unusedProps = iterableFilter(htmlStore.getAllPropertiesForTag(htmlNode), prop => !alreadyUsedPropNames.includes(prop.name.toLowerCase()));
+		const unusedProps = iterableFilter(htmlStore.getAllPropertiesForTag(htmlNode), prop => !alreadyUsedAttrNames.includes(prop.name.toLowerCase()));
 		return Array.from(
 			iterableMap(unusedProps, prop =>
 				targetToCompletion(prop, {
@@ -31,7 +31,6 @@ export function completionsForHtmlAttrs(htmlNode: HtmlNode, location: DocumentPo
 
 	// Code completions for "?[...]";
 	else if (location.word.startsWith(LIT_HTML_BOOLEAN_ATTRIBUTE_MODIFIER)) {
-		const alreadyUsedAttrNames = htmlNode.attributes.map(a => a.name.toLowerCase());
 		const unusedAttrs = iterableFilter(htmlStore.getAllAttributesForTag(htmlNode), prop => !alreadyUsedAttrNames.includes(prop.name.toLowerCase()));
 		const booleanAttributes = iterableFilter(unusedAttrs, prop => isAssignableToBoolean(prop.getType()));
 		return Array.from(
@@ -46,8 +45,7 @@ export function completionsForHtmlAttrs(htmlNode: HtmlNode, location: DocumentPo
 
 	// Code completions for "@[...]";
 	else if (location.word.startsWith(LIT_HTML_EVENT_LISTENER_ATTRIBUTE_MODIFIER)) {
-		const alreadyUsedEventNames = htmlNode.attributes.map(a => a.name.toLowerCase());
-		const unusedEvents = iterableFilter(htmlStore.getAllEventsForTag(htmlNode), prop => !alreadyUsedEventNames.includes(prop.name.toLowerCase()));
+		const unusedEvents = iterableFilter(htmlStore.getAllEventsForTag(htmlNode), prop => !alreadyUsedAttrNames.includes(prop.name.toLowerCase()));
 		return Array.from(
 			iterableMap(unusedEvents, prop =>
 				targetToCompletion(prop, {
@@ -58,8 +56,10 @@ export function completionsForHtmlAttrs(htmlNode: HtmlNode, location: DocumentPo
 		);
 	}
 
-	const alreadyUsedAttrNames = htmlNode.attributes.map(a => a.name.toLowerCase());
-	const unusedAttrs = iterableFilter(htmlStore.getAllAttributesForTag(htmlNode), prop => !alreadyUsedAttrNames.includes(prop.name.toLowerCase()));
+	const unusedAttrs = iterableFilter(htmlStore.getAllAttributesForTag(htmlNode), prop => {
+		var attrName = prop.name.startsWith(LIT_HTML_EVENT_LISTENER_ATTRIBUTE_MODIFIER) ? prop.name.substring(1) : prop.name
+		return !alreadyUsedAttrNames.includes(attrName.toLowerCase());
+	});
 	return Array.from(iterableMap(unusedAttrs, prop => targetToCompletion(prop, { modifier: "", onTagName })));
 }
 
