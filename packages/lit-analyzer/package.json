@@ -1,6 +1,6 @@
 {
 	"name": "wapitis-analyzer",
-	"version": "1.0.16",
+	"version": "1.0.17",
 	"description": "CLI that type checks bindings in lit-html templates in a wapitis component",
 	"author": "Nicolas Boyer, runem",
 	"license": "MIT",
